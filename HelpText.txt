@@ -1,0 +1,11 @@
+Map Reduce program which does Secondary Sorting of data
+Map Reduce program with Total Order Sort
+Multi Partitions program with hash modulo
+Program to read data from images and find the unique image.
+
+https://www.oreilly.com/library/view/data-algorithms/9781491906170/ch01.html
+
+https://www.youtube.com/watch?v=HZX-3put_vM - Secondary Sort Video (Concept)
+https://www.youtube.com/watch?v=GXQG4byQ53c - Secondary Sort Video (Code)
+
+https://gist.github.com/airawat/6604175 - Secondary Sort (Code)
