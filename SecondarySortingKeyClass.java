@@ -13,20 +13,20 @@ public class SecondarySortingKeyClass
         WritableComparable<SecondarySortingKeyClass>{
 
     //Declare class variable for Emp Hire Date and Composite of DOj, Fname, LName, Emp Id etc
-    private Text strEmpHireDate;
+    private Text strEmpDOBYear;
     private Text strDojFNameLNameEmpId;
 
     //Set values for class variables
     public void set(Text emphiredate, Text dojfnamelnameempid)
     {
-        this.strEmpHireDate = emphiredate;
+        this.strEmpDOBYear = emphiredate;
         this.strDojFNameLNameEmpId = dojfnamelnameempid;
     }
 
-    //Get values for Hire Date
-    public Text getEmpHireDate()
+        //Get values for Hire Date
+    public Text getEmpDOBYear()
     {
-        return this.strEmpHireDate;
+        return this.strEmpDOBYear;
     }
 
     //Get values for composite of Doj, Fname, Lname and Emp Id
@@ -42,21 +42,21 @@ public class SecondarySortingKeyClass
     }
 
     //Override Constructor with user provided first and second key in String Format, will just create default key set
-    public SecondarySortingKeyClass(String emphiredate, String dojfnamelnameempid)
+    public SecondarySortingKeyClass(String empdobyear, String dojfnamelnameempid)
     {
-        set(new Text(emphiredate), new Text(dojfnamelnameempid));
+        set(new Text(empdobyear), new Text(dojfnamelnameempid));
     }
 
     //Override Constructor with user provided first and second key in Text Format, will just create default key set
-    public SecondarySortingKeyClass(Text emphiredate, Text dojfnamelnameempid)
+    public SecondarySortingKeyClass(Text empdobyear, Text dojfnamelnameempid)
     {
-        set(emphiredate,dojfnamelnameempid);
+        set(empdobyear,dojfnamelnameempid);
     }
 
     @Override
     public void write(DataOutput out) throws IOException
     {
-        this.strEmpHireDate.write(out);
+        this.strEmpDOBYear.write(out);
         this.strDojFNameLNameEmpId.write(out);
 
     }
@@ -64,7 +64,7 @@ public class SecondarySortingKeyClass
     @Override
     public void readFields(DataInput in) throws IOException
     {
-        this.strEmpHireDate.readFields(in);
+        this.strEmpDOBYear.readFields(in);
         this.strDojFNameLNameEmpId.readFields(in);
     }
 
@@ -72,7 +72,7 @@ public class SecondarySortingKeyClass
     @Override
     public int compareTo(SecondarySortingKeyClass sskc)
     {
-        int cmp = this.strEmpHireDate.compareTo(sskc.strEmpHireDate);
+        int cmp = this.strEmpDOBYear.compareTo(sskc.strEmpDOBYear);
         if (cmp != 0)
         {
             return cmp;
@@ -80,7 +80,6 @@ public class SecondarySortingKeyClass
 
         return this.strDojFNameLNameEmpId.compareTo(sskc.strDojFNameLNameEmpId);
     }
-
 
 
 }
